@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Login.css";
-import { confirmAlert } from 'react-confirm-alert';
-
 //const FormData = require('form-data');
  
 const InitialState = {
@@ -9,25 +7,25 @@ const InitialState = {
   password: "",
 }
 
-class login extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props);
     this.state=InitialState;
   }
 
-  showMessage(title, message) {
-    confirmAlert({
-      title: title,
-      closeOnClickOutside: false,
-      message: message,
-      buttons: [
-        {
-          label: 'Ok',
-        },
-      ]
-    });
-  }
+  // showMessage(title, message) {
+  //   confirmAlert({
+  //     title: title,
+  //     closeOnClickOutside: false,
+  //     message: message,
+  //     buttons: [
+  //       {
+  //         label: 'Ok',
+  //       },
+  //     ]
+  //   });
+  // }
  
 
   handleSubmit = event => {
@@ -48,7 +46,6 @@ class login extends Component {
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
-      
     });
   }
   
@@ -59,7 +56,11 @@ class login extends Component {
              <div className="wrapper-page">
              <div className="card">
              <div className="card-body">
-
+             <h3 className="text-center m-0">
+                <a className="logo logo-admin" href="/">
+                  <img alt="" height="80" src="/assets/TCH.jpg"/>
+                </a>
+              </h3>
             
              <form onSubmit={this.handleSubmit} className="form-horizontal m-t-30">
                 <div className="form-group">
@@ -74,9 +75,8 @@ class login extends Component {
                 
                 <div className="form-group row m-t-20">                                                 
                     <div className="col-12 text-right">
-                      <button className="btn w-md waves-effect waves-light" type="submit">Log In</button>
+                      <button className="button-colour" type="submit">Log In</button>
                     </div>
-                       
                   </div>
               </form>
              </div>
@@ -87,4 +87,4 @@ class login extends Component {
     }
 }
 
-export default login;
+export default Login;
